@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indowealthtoken</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            text-decoration: none;
+        }
+        
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(128, 122, 94, 0.226);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            padding: 0px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        
+        header .logo{
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(255, 187, 0);
+        }
+        
+        header .navbar ul{
+            list-style: none;
+        }
+        
+        header .navbar ul li{
+            position: relative;
+        float: left;
+        }
+        
+        header .navbar ul li a{
+            font-size: 15px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.856);
+            display: block;
+        }
+        
+        header .navbar ul li a:hover{
+        color:rgb(255, 187, 0) ;
+        transition: 0.3s;
+        }
+        
+        header .navbar ul li ul{
+            position: absolute;
+            left: 0;
+            width: 200px;
+            background: rgba(255, 187, 0, 0.582);
+            display: none;
+        }
+        
+        header .navbar ul li ul li{
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.507) ;
+        }
+        
+        header .navbar ul li ul li ul{
+            left: 200px;
+            top:0;
+        }
+        
+        header .navbar ul li:focus-within > ul,
+        header .navbar ul li:hover > ul{
+            display: initial;
+        }
+        
+        
+        #menu-bar{
+            display: none;
+           
+        }
+        
+        
+        header label{
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        @media(max-width:1000px){
+            header{
+                padding: 20px;
+            }
+        
+        header label{
+            display: initial;
+        }
+        
+        header .navbar{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 187, 0, 0.555);
+            border-top: 1px solid rgba(0, 0, 0, .1);
+            display: none;
+        }
+        header .navbar ul li{
+            width: 100%;
+            text-align: center;
+        }
+        
+        header .navbar ul li ul{
+            position: relative;
+            width: 100%;
+        }
+        header .navbar ul li ul li{
+            background: rgba(255, 187, 0, 0.712);
+            text-align: center;
+        }
+        
+        header .navbar ul li ul li ul{
+            width: 100%;
+            left: 0;
+        }
+        #menu-bar:checked ~ .navbar{
+            display: initial;
+        }
+        
+        }
+        
+         #home {
+            background-image: url(images/home.png);
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        display: flex;
+         align-items: center;
+           position: relative;
+         }
+        
+         #home h1{
+
+            color: white;
+            font-size:65px;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+          margin-top: 260px;
+         position: absolute;
+        
+         }
+         #home h1:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+         }
+         #home h1:nth-child(2){
+            color: rgb(255, 187, 0);
+            animation: animate 3s ease-in-out infinite;
+         }
+        @keyframes animate
+        {
+            0%,100%
+            {  
+                clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100% );
+            }
+            
+                50%
+                {
+                    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100% );
+                }
+            
+        }
+        
+         #aboutus{
+            align-items: center;
+            padding: 8vw 8vw 2vw 8vw;
+            
+         }
+        
+        
+         #aboutus .abouttext{
+            margin-bottom: 0px;
+         }
+         #aboutus .abouttext h1{
+           
+            font-weight: 800;
+            font-size: 40px;
+            margin-bottom: 20px;
+         }
+         #aboutus .abouttext h1{
+            color: transparent;
+            -webkit-text-stroke: 2px rgb(255, 187, 0);
+            position: relative;
+         }
+         #aboutus .abouttext h1::before{
+            content: "About Us";
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            overflow: hidden;
+            color: rgb(255, 187, 0);
+            transition: 1s ease-in-out;
+         }
+         #aboutus .abouttext h1:hover::before{
+            width: 100%;
+            filter: drop-shadow(0 0 25px rgb(255, 187, 0));
+         }
+         #aboutus .abouttext p{
+            font-size: 20px;
+            line-height: 29px;
+        letter-spacing: 1px;
+        width: 100%;
+        font-weight: 500;
+         }
+        
+         #aboutus .wrap{
+        margin-top: 40px;
+         }
+         #aboutus .wrap a{
+            color:  rgb(255, 187, 0);
+            transition: .5s;
+            padding: 15px 20px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            position: relative;
+            border-radius: 4px;
+            font-size: 18px;
+            border: 1px solid rgb(255, 187, 0);
+           
+         }
+        
+         #aboutus .wrap a:hover{
+            background-color: rgb(255, 187, 0);
+            color: wheat;
+            box-shadow: 0 0 5px rgb(255, 251, 0),
+                        0 0 25px rgb(255, 251, 0)
+                        0 0 50px rgb(255, 187, 0)
+                        0 0 200px rgb(255, 187, 0);
+        -webkit-box-reflect: below 1px linear-gradient(transparent, white)
+         }
+        
+         #footer{
+            display: flex;
+            background-color:  rgb(255, 166, 0);
+            padding-top: 20px;
+            padding-left: 100px;
+            padding-bottom: 20px;
+            margin-top: 60px;
+            align-items: center;
+        
+            background-size: cover;
+         }
+        
+         #footer .topfooter{
+            color: white;
+        
+         }
+         #footer .btnfooter{
+            margin-left: 600px;
+            
+         }
+         #footer .btnfooter a{
+            color:  white;
+            transition: .5s;
+            padding: 12px 33px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            position: relative;
+            border-radius: 4px;
+            font-size: 18px;
+            border: 1px solid white;
+         }
+         #footer .btnfooter a:hover{
+            
+            color:rgb(255, 187, 0);
+           
+         }
+         footer{
+            display: flex;
+            padding: 6vw;
+            background: linear-gradient(  170deg, black 65%,rgb(255, 187, 0) );
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        height: 400px;
+        
+         }
+         footer .footer-col{
+            padding-top: 10px;
+            list-style: none;
+         }
+        
+         footer h3 {
+        color: rgb(255, 187, 0);
+        padding-bottom: 25px;
+        font-weight: 600;
+         }
+         footer li a{
+            list-style: none;
+            color: white;
+            padding: 10px 0;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            line-height: 50px;
+         }
+        
+         footer li a:hover{
+            color: rgb(255, 187, 0);
+         }
+         footer img{
+            padding-left: 10px;
+         }
+          .downfooter img{
+           
+           width: 100%;
+          }
+        
+          @media(max-width:1320px){
+          
+        
+           #aboutus .abouttext p{
+              font-size: 18px;
+              line-height: 25px;
+          letter-spacing: .5px;
+          
+          font-weight: 500;
+           }
+          
+          }
+          @media(max-width:1060px){
+           #aboutus{
+              display: block;
+              align-items: center;
+              padding: 8vw 8vw 2vw 8vw;
+           }
+          
+        
+          
+        
+           #aboutus .abouttext p{
+              font-size: 18px;
+              line-height: 25px;
+          letter-spacing: .5px;
+          
+          font-weight: 500;
+           }
+           #aboutus .abouttext h1{
+           margin-top: 50px;
+              font-weight: 800;
+              font-size: 40px;
+              margin-bottom: 20px;
+          }}
+        
+        
+          @media(max-width:700px){
+           #aboutus{
+              display: block;
+              align-items: center;
+              padding: 8vw 8vw 2vw 8vw;
+           }
+          
+        
+          
+        
+           #aboutus .abouttext p{
+              font-size: 18px;
+              line-height: 25px;
+          letter-spacing: .5px;
+         
+          font-weight: 500;
+           }
+           #aboutus .abouttext h1{
+           margin-top: 50px;
+              font-weight: 800;
+              font-size: 40px;
+              margin-bottom: 20px;
+          }}
+          @media(max-width:1300px){
+          #footer{
+          display: block;
+          padding-left: 30px;
+        } #footer .btnfooter{
+           margin-left: 00px;
+           margin-top: 30px;
+        }
+          }
+        
+          @media(max-width:700px){
+           #footer .topfooter h1{
+             font-size: 20px;
+        
+           }
+        }
+        
+           @media(max-width:730px){
+              #home h1{
+                 color: white;
+                 margin-right: 00px;
+                 font-size:48px;
+                 font-weight: 600;
+                 width: 360px;
+                 font-family: Arial, Helvetica, sans-serif;
+                 margin-left: 80px;
+                 
+              }
+              #home .wrapper{
+                 margin-left: 66px;
+              }
+              #home .wrapper a{
+                 color:  rgb(255, 187, 0);
+                 margin-left: 20px;
+                 margin-top: 100px;
+                 transition: .5s;
+                 overflow: hidden;
+                 padding: 15px 20px;
+                 display: inline-block;
+                 letter-spacing: 1.5px;
+                 font-weight: bold;
+                 position: relative;
+                 border-radius: 4px;
+                 font-size: 15px;
+              } 
+           } @media(max-width: 500px){
+              #home h1{
+                 color: white;
+                 margin-right: 00px;
+                 font-size:38px;
+                 font-weight: 600;
+                 width: 360px;
+                 font-family: Arial, Helvetica, sans-serif;
+                 margin-left: 80px;
+                 padding-left: 30px;
+              }
+              #home .wrapper{
+                 margin-left: 66px;
+              }
+              #home .wrapper a{
+                 color:  rgb(255, 187, 0);
+                 margin-left: 20px;
+                 margin-top: 100px;
+                 transition: .5s;
+                 overflow: hidden;
+                 padding: 15px 20px;
+                 display: inline-block;
+                 letter-spacing: 1.5px;
+                 font-weight: bold;
+                 position: relative;
+                 border-radius: 4px;
+                 font-size: 15px;
+              } 
+              #aboutus .wrap a{
+                color:  rgb(255, 187, 0);
+                transition: .5s;
+                padding: 15px 20px;
+                letter-spacing: 1.5px;
+                font-weight: bold;
+                position: relative;
+                border-radius: 4px;
+                font-size: 16px;
+                border: 1px solid rgb(255, 187, 0);
+               
+             }
+           }
+           @media(max-width:430px){
+              #home h1{
+                 color: white;
+                 margin-right: 0px;
+                 font-size:30px;
+                 font-weight: 600;
+                 width: 200px;
+                 font-family: Arial, Helvetica, sans-serif;
+                 margin-left: 14px;
+                 
+              }
+              #home .wrapper{
+                 margin-left: 3px;
+              }
+              #home .wrapper a{
+                 color:  rgb(255, 187, 0);
+                 margin-left:1px;
+                 margin-top: 100px;
+                 transition: .5s;
+                 overflow: hidden;
+                 padding: 15px 20px;
+                 display: inline-block;
+                 letter-spacing: 1.5px;
+                 font-weight: bold;
+                 position: relative;
+                 border-radius: 4px;
+                 font-size: 12px;
+              } 
+             
+           
+              #aboutus .abouttext p{
+                 font-size: 18px;
+                 line-height: 25px;
+             letter-spacing: .5px;
+             
+             font-weight: 500;
+              }
+              #footer .topfooter h1{
+                 font-size: 15px;
+            
+               }
+               #footer .btnfooter a{
+                 color:  white;
+                 transition: .5s;
+                 padding: 12px 33px;
+                 letter-spacing: 1.5px;
+                 font-weight: bold;
+                 position: relative;
+                 border-radius: 4px;
+                 font-size: 13px;
+                 border: 1px solid white;
+              }
+              #aboutus .wrap a{
+                color:  rgb(255, 187, 0);
+                transition: .5s;
+                padding: 15px 20px;
+                letter-spacing: 1.5px;
+                font-weight: bold;
+                position: relative;
+                border-radius: 4px;
+                font-size: 13px;
+                border: 1px solid rgb(255, 187, 0);
+               
+             }
+        
+           }
+           @media(max-width:700px){
+           header .logo{
+              font-weight: bold;
+              font-size: 18px;
+              color: rgb(255, 187, 0);
+          }}
+          @media(max-width:500px){
+           header .logo{
+              font-weight: bold;
+              font-size: 16px;
+              color: rgb(255, 187, 0);
+          }
+          header label{
+           font-size: 16px;
+        }
+        footer{
+            display: block;
+            padding: 6vw;
+            background: linear-gradient(  170deg, black 65%,rgb(255, 187, 0) );
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        height: 900px;
+         }
+         footer .footer-col{
+            padding-top: 10px;
+            list-style: none;
+         }
+        
+         footer h3 {
+        color: rgb(255, 187, 0);
+        padding-bottom: 25px;
+        font-weight: 600;
+         }
+          }
+        #aboutus .aboutimage img{
+object-fit: contain;
+        }
+        #space{
+            margin-top: 100px;
+        }
+
+
+  
+        h1{
+            color: white;
+        }
+        .card{
+            margin: 0 auto;
+            padding: 1em;
+            width: 500px;
+            background: linear-gradient(  60deg, black 55%,rgb(255, 187, 0) );
+         
+            border-radius: 5px;
+            position: relative;
+            margin-top: 50px;
+        }
+         
+        @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        
+        .card::after, .card::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), transparent 70%, rgb(255, 187, 0) );
+            top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        padding: 3px;
+        border-radius: 10px;
+        animation: 3s spin linear infinite;
+        }
+        
+        .card::before{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        @keyframes spin{
+            from{
+                --angle: 0deg;
+            }
+            to{
+                --angle: 360deg;
+            }
+        }
+#about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(470px, 1fr ));
+   padding: 30px;
+    gap: 25px;
+    margin-top: 100px;
+   
+    
+}
+@media (max-width: 600px){
+    #about{ 
+         grid-template-columns:  1fr;
+}}
+
+#about .card p{
+    color: white;
+   padding-bottom: 10px;
+   padding-top: 6px;
+   letter-spacing: .5px;
+   font-weight: 200;
+ 
+  padding-bottom: 30px;
+   font-size: 13px;
+  
+  
+}
+#about .card h1{
+    color: white;
+    padding-top: 10px;
+}
+#about .card .yoo{
+text-align: center;
+justify-content: center;
+align-items: center;
+width: 100%;
+border-radius: 5px;
+height: 350px;
+}
+#about .card .woo{
+    margin-bottom: 20px;
+   
+   text-align: end;
+}
+#about .card a{
+    color:  white;
+         transition: .5s;
+         padding: 12px 30px;
+         
+        
+      
+         border-radius: 4px;
+         font-size: 13px;
+         border: 1px solid rgb(255, 187, 0);
+         background-color: rgb(255, 187, 0);
+        
+   
+}
+@media(max-width:430px){
+    #home{
+       background-image: url(images/IndoWealth-Airdrop-Design71\ \(2\).png);
+    }
+ }
+
+</style>
+</head>
+<body>
+ <header>
+<a href="index.html" class="logo">IndoWealth Token</a>
+<input type="checkbox" id="menu-bar">
+<label for="menu-bar">Menu</label>
+
+
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">Who We Are</a>
+        <ul>
+            <li><a href="ourteam.html">Our Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="vision.html">Vision</a></li>
+        </ul>
+    </li>
+        <li><a href="services.html">What We Do</a>
+            <ul>
+                <li><a href="iwt.html">IWT</a></li>
+                <li><a href="nbc.html">NBC Land</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blogs & Announcements</a></li>
+        <li><a href="Learnmore.html">Learn More</a> 
+            <ul>
+            <li><a href="whitepaper.html">Whitepaper</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </li>
+    </ul>
+</nav>
+ </header>   
+ <section id="home">
+    <h1> Meet Our Team </h1>
+    <h1> Meet Our Team </h1>
+    
+   
+    
+</section>
+
+<section id="about">
+    <div class="card">
+        <img class="yoo" src="images/Rectangle 3860 (3).png" alt="">
+        <h1>William “Will” Adams</h1>
+       <p>  the forefront of introducing a unique world’s first token in IWT.</p>
+      <div class="woo">
+       <a href=""> Learn More</a>
+      </div>
+        </div>
+    
+    <div class="card">
+        <img class="yoo" src="images/Rectangle 3860 (1).png " alt="">
+        <h1>Scott “Benny” Burnham</h1>
+        <p> and is now determined to ensure the success of IWT</p>
+        <div class="woo">
+            <a href=""> Learn More</a>
+           </div>
+        </div>
+     
+    <div class="card">
+        <img class="yoo" src="images/IndoWealth-Airdrop-Design430.png " alt=""> 
+        <h1>Sergei “Peter” Pavlovitch</h1>
+       <p> with Will and Benny to create IWT and ensure its message is known far and wide.</p>
+       <div class="woo">
+        <a href=""> Learn More</a>
+       </div>
+        </div>
+    
+    <div class="card">
+        <img class="yoo" src="images/Rectangle 3860.png " alt="">
+        <h1>Kyo</h1>
+      <p>   though he is loath to outwardly display such excitement to others.</p>
+      <div class="woo">
+        <a href=""> Learn More</a>
+       </div>
+    </div>
+    
+
+</section>
+<section id="space">    
+<footer >
+    <div class="footer-col">
+<h3>IndoWealth Token</h3>
+<li><a href="blog.html">Blogs & Announcements</a></li>
+    </div>
+
+    <div class="footer-col">
+        <h3>What We Do</h3>
+        <li><a href="">IndoWealth Token</a></li>
+        <li><a href="">NBC Land</a></li>
+            </div>
+
+            <div class="footer-col">
+                <h3>Who We Are</h3>
+                <li><a href="">Our Team</a></li>
+                <li><a href="">Mission</a></li>
+                <li><a href="">Vission</a></li>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3>Learn More</h3>
+                        <li><a href="">Whitepaper</a></li>
+                        <li><a href="">Documentation</a></li>
+                        <li><a href="">FAQ</a></li>
+                            </div>   
+                            
+                            <div class="footer-col">
+                                <h3>Contact</h3>
+                    <img  src="images/Ellipse 2 (1).png" alt="">
+                    <img src="images/Ellipse 3 (1).png" alt="">
+    </div>
+    
+</div>  
+                                         
+</footer>
+<div class="downfooter">
+  <img  src="images/Terms of Use.png" alt="">
+</div>
+</section>
+</body>
+</html>
